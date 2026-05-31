@@ -69,7 +69,7 @@ const generatedTextFiles = (await walk(root)).filter((file) =>
 for (const file of generatedTextFiles) {
   const content = await readFile(file, "utf8");
   if (content.includes("cdn.myportfolio.com")) {
-    throw new Error(`Adobe CDN reference found in ${path.relative(process.cwd(), file)}`);
+    throw new Error(`External portfolio CDN reference found in ${path.relative(process.cwd(), file)}`);
   }
 }
 
@@ -121,5 +121,5 @@ try {
 }
 
 console.log(`Verified ${requiredFiles.length} generated pages.`);
-console.log("No Adobe CDN references found in generated HTML/CSS/JS.");
+console.log("No external portfolio CDN references found in generated HTML/CSS/JS.");
 console.log("Contact mailto and representative local routes passed.");
