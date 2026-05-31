@@ -86,7 +86,13 @@
     "title": "NISSAN Heritage Cars ＆ Safe Driving Studio",
     "year": "2024",
     "description": "",
-    "body": "日産自動車様からの案件でワールドを制作しました。\n長年愛される日産の名車とその時代をイメージした撮影スタジオのワールドです。\n\n交通安全について楽しく学ぶことができます。\nNISSAN Heritage Cars ＆ Safe Driving Studio ワールドリンク",
+    "body": "日産自動車様からの案件でワールドを制作しました。\n長年愛される日産の名車とその時代をイメージした撮影スタジオのワールドです。\n\n交通安全について楽しく学ぶことができます。",
+    "links": [
+      {
+        "label": "VRChat World",
+        "url": "https://vrchat.com/home/launch?worldId=wrld_3987e705-2587-406c-9703-4602dc400035"
+      }
+    ],
     "cover": "/assets/projects/nissan-heritage-cars-safe-driving-studio/cover.jpg",
     "gallery": [
       {
@@ -522,7 +528,13 @@
     "title": "ShaderFes2021",
     "year": "2021",
     "description": "Art Direction / Architectural Design / Modeling / Shader /2D Design",
-    "body": "ShaderFes2021はVRChatで開催された大規模なシェーダーの展示イベントです。\n作品の中に入れる立体的な芸術作品や動く絵画などのShaderが、近未来的な美術館に多数展示されました。\nワールドのアートディレクション、モデリング制作、2Dデザインなどを担当しました。\nShaderFes2021制作記",
+    "body": "ShaderFes2021はVRChatで開催された大規模なシェーダーの展示イベントです。\n作品の中に入れる立体的な芸術作品や動く絵画などのShaderが、近未来的な美術館に多数展示されました。\nワールドのアートディレクション、モデリング制作、2Dデザインなどを担当しました。",
+    "links": [
+      {
+        "label": "ShaderFes2021制作記",
+        "url": "https://note.com/lura/n/n73a9000acec8"
+      }
+    ],
     "cover": "/assets/projects/shaderfes2021/cover.png",
     "gallery": [
       {

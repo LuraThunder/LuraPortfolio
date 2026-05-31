@@ -32,6 +32,15 @@ const next = index < projects.length - 1 ? projects[index + 1] : undefined;
       </figure>
     )}
     {project.body && <div class="rich-text">{project.body}</div>}
+    {project.links?.length > 0 && (
+      <div class="button-row project-links" aria-label="Project links">
+        {project.links.map((link) => (
+          <a class="button" href={link.url} target="_blank" rel="noreferrer">
+            {link.label}
+          </a>
+        ))}
+      </div>
+    )}
     <ProjectGallery images={project.gallery} />
     <nav class="project-nav" aria-label="Project navigation">
       <span>{previous ? <a href={`/${previous.slug}`}>&larr; {previous.title}</a> : ""}</span>

@@ -560,6 +560,10 @@ textarea {
   color: #ffffff;
 }
 
+.project-links {
+  margin-bottom: 36px;
+}
+
 .contact-panel {
   width: 100%;
   max-width: 800px;
