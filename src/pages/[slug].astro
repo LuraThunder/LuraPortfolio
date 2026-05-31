@@ -26,6 +26,11 @@ const next = index < projects.length - 1 ? projects[index + 1] : undefined;
       <h1 class="page-title">{project.title}</h1>
       {project.description && <p class="page-description">{project.description}</p>}
     </header>
+    {project.cover && (
+      <figure class="project-cover">
+        <img src={project.cover} alt={project.title} loading="eager" />
+      </figure>
+    )}
     {project.body && <div class="rich-text">{project.body}</div>}
     <ProjectGallery images={project.gallery} />
     <nav class="project-nav" aria-label="Project navigation">

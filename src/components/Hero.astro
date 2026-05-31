@@ -1,8 +1,11 @@
 ---
 import site from "../data/site.json";
+
+const heroImage = site.heroImage || site.ogImage;
 ---
 
-<section class="hero" style={`--hero-image: url("${site.heroImage || site.ogImage}")`} aria-labelledby="hero-title">
+<section class="hero" aria-labelledby="hero-title">
+  <img class="hero__image" src={heroImage} alt="" aria-hidden="true" />
   <div class="hero__content">
     <h1 id="hero-title" class="hero__title">{site.tagline}</h1>
     <p class="hero__subtitle">{site.subtagline}</p>

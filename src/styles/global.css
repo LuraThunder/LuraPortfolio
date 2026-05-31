@@ -270,11 +270,15 @@ textarea {
   overflow: hidden;
   padding: 0 24px;
   background-color: #000000;
-  background-image: var(--hero-image);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .masthead-placeholder {
@@ -285,6 +289,8 @@ textarea {
 }
 
 .hero__content {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: 800px;
   transform: translateY(-15px);
@@ -318,6 +324,7 @@ textarea {
   position: absolute;
   bottom: 45px;
   left: calc(50% - 30px);
+  z-index: 1;
   display: block;
   width: 60px;
   height: 40px;
@@ -508,6 +515,20 @@ textarea {
 }
 
 .about-image img {
+  width: 100%;
+  height: auto;
+  background: var(--color-panel);
+}
+
+.project-cover {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin: 0 auto 40px;
+  padding: 0;
+}
+
+.project-cover img {
+  display: block;
   width: 100%;
   height: auto;
   background: var(--color-panel);
