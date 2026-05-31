@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import WorkGrid from "../components/WorkGrid.astro";
+import projects from "../data/projects.json";
+---
+
+<BaseLayout title="Quickbrown" canonicalPath="/work" current="work" hideHeader>
+  <Hero />
+  <Header current="work" />
+  <main class="page-main">
+    <WorkGrid projects={projects} />
+    <section class="back-to-top">
+      <a href="#top"><span class="arrow">&uarr;</span>Back to Top</a>
+    </section>
+  </main>
+</BaseLayout>

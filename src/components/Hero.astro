@@ -1,0 +1,14 @@
+---
+import site from "../data/site.json";
+---
+
+<section class="hero" style={`--hero-image: url("${site.heroImage || site.ogImage}")`} aria-labelledby="hero-title">
+  <div class="hero__content">
+    <h1 id="hero-title" class="hero__title">{site.tagline}</h1>
+    <p class="hero__subtitle">{site.subtagline}</p>
+  </div>
+  <a class="masthead-arrow-container" href="#work" aria-label="Work">
+    <span class="masthead-arrow"></span>
+  </a>
+</section>
+<div class="masthead-placeholder" aria-hidden="true"></div>

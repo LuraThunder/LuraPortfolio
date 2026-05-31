@@ -1,0 +1,30 @@
+---
+interface Project {
+  slug: string;
+  title: string;
+  year: string;
+  description: string;
+  cover: string;
+}
+
+interface Props {
+  projects: Project[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section id="work" class="work-grid" aria-label="Work">
+  {projects.map((project) => (
+    <a class="project-card" href={`/${project.slug}`}>
+      <div class="project-card__media">
+        <img src={project.cover} alt={project.title} loading="lazy" />
+      </div>
+      <div class="project-card__meta">
+        <h2 class="project-card__title">{project.title}</h2>
+        {project.description && <p class="project-card__description">{project.description}</p>}
+        {project.year && <p class="project-card__year">{project.year}</p>}
+      </div>
+    </a>
+  ))}
+</section>

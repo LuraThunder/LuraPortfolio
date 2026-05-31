@@ -1,0 +1,12 @@
+---
+import site from "../data/site.json";
+---
+
+<footer class="site-footer">
+  <a class="social-link" href={site.twitterUrl} target="_blank" rel="noreferrer" aria-label="X">
+    <svg viewBox="-8 -3 35 24" aria-hidden="true">
+      <path d="M10.4 7.4 16.9 0h-1.5L9.7 6.4 5.2 0H0l6.8 9.7L0 17.4h1.5l5.9-6.8 4.7 6.8h5.2l-6.9-10ZM8.3 9.8l-.7-1-5.5-7.6h2.4l4.4 6.2.7 1 5.7 8h-2.4L8.3 9.8Z" />
+    </svg>
+  </a>
+  <div class="footer-text">{site.footerText}</div>
+</footer>

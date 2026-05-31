@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import site from "../data/site.json";
+
+const mailto = `mailto:${site.contactEmail}?subject=Portfolio%20Contact`;
+---
+
+<BaseLayout title="Contact" canonicalPath="/contact" current="contact">
+  <main class="page-main page-main--narrow">
+    <header class="page-header">
+      <h1 class="page-title">Contact</h1>
+    </header>
+    <section class="contact-panel">
+      <p class="contact-email">{site.contactEmail}</p>
+      <div class="button-row">
+        <a class="button" href={mailto}>Send Message</a>
+      </div>
+    </section>
+    <section class="back-to-top">
+      <a href="#top"><span class="arrow">&uarr;</span>Back to Top</a>
+    </section>
+  </main>
+</BaseLayout>

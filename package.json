@@ -1,0 +1,19 @@
+{
+  "name": "quickbrown-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/run-astro.mjs dev",
+    "build": "node scripts/run-astro.mjs build",
+    "preview": "node scripts/run-astro.mjs preview",
+    "serve": "node scripts/serve-dist.mjs",
+    "verify": "node scripts/verify-dist.mjs",
+    "deploy:check": "npm run build && npm run verify",
+    "import:adobe": "node scripts/import-adobe-portfolio.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {}
+}

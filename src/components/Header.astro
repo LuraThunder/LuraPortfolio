@@ -1,0 +1,50 @@
+---
+import site from "../data/site.json";
+
+interface Props {
+  current?: "about" | "work" | "contact";
+}
+
+const { current } = Astro.props;
+const nav = [
+  { href: "/about", label: "About", key: "about" },
+  { href: "/work", label: "Work", key: "work" },
+  { href: "/contact", label: "Contact", key: "contact" },
+];
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <div class="logo-container">
+      <div class="logo-wrap">
+        <div class="logo logo-image">
+          <a class="image-normal image-link" href="/work" aria-label="Quickbrown work">
+            <img src={site.logo} alt="Quickbrown" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-container">
+      <nav class="site-nav" aria-label="Primary navigation">
+        {nav.map((item) => (
+          <div class={item.key === "work" ? "gallery-title" : "page-title"}>
+            <a href={item.href} aria-current={current === item.key ? "page" : undefined}>
+              {item.label}
+            </a>
+          </div>
+        ))}
+        <div class="social pf-nav-social">
+          <ul>
+            <li>
+              <a class="social-link" href={site.twitterUrl} target="_blank" rel="noreferrer" aria-label="X">
+                <svg viewBox="-8 -3 35 24" aria-hidden="true">
+                  <path d="M10.4 7.4 16.9 0h-1.5L9.7 6.4 5.2 0H0l6.8 9.7L0 17.4h1.5l5.9-6.8 4.7 6.8h5.2l-6.9-10ZM8.3 9.8l-.7-1-5.5-7.6h2.4l4.4 6.2.7 1 5.7 8h-2.4L8.3 9.8Z" />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>

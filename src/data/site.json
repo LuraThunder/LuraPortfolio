@@ -1,0 +1,32 @@
+{
+  "title": "Quickbrown",
+  "tagline": "Virtual Comfort Creation",
+  "subtagline": "For People Living in Virtual Reality",
+  "description": "Luraは、Unityリアルタイムでの3DCG空間制作を得意とする背景デザイナー。VR住空間デザイン、イベント会場、アートディレクション、モデリング制作から最適化までを一貫して対応。PCVR, Quest, モバイル端末, WebGLに対応可能。",
+  "keywords": [
+    "3DCG",
+    "Unity",
+    "リアルタイム",
+    "VR",
+    "VR住空間",
+    "イベント会場",
+    "アートディレクション",
+    "モデリング",
+    "最適化",
+    "PCVR",
+    "Quest",
+    "モバイル端末",
+    "メタバース",
+    "WebGL"
+  ],
+  "canonicalOrigin": "https://quickbrown.net",
+  "googleAnalyticsId": "G-RMRDGRRCVZ",
+  "logo": "/assets/brand/quickbrown-logo.png",
+  "ogImage": "/assets/brand/og-image.jpg",
+  "heroImage": "/assets/brand/hero.jpg",
+  "aboutImage": "/assets/about/lura.jpg",
+  "contactEmail": "quickbrown9999@gmail.com",
+  "twitterUrl": "https://twitter.com/Lu_Ra_999",
+  "footerText": "Quickbrown\n+\nVirtual Fox Design Studio",
+  "aboutBody": "Lura\n3DCGアーティスト\n\n■自己紹介\n\nゲーム ／ VR 向けにリアルタイムで動作する3DCG空間制作を得意としています。\nVR住空間や、イベント会場のデザイン、アートディレクション、モデリング制作からミドルウェアに合わせた最適化まで含めて対応可能です。PCVR、Quest、モバイル端末、WebGL向けの制作が可能です。\n\n■使用ソフト\n\n・Unity\n・UnrealEngine\n・Blender\n・Substance Painter\n・Substance Designer\n・Marvelous Designer\n・PhotoShop\n・Illustrator\n・AfterEffects\n\n■Background\n武蔵野美術大学卒後、ゲーム業界で働きつつ平行してVRChatでの創作を始める。\nバーチャルマーケット／ShaderFesなどのイベント、建築アセット制作、ギミック制作などを経て、\n2023年にフリーランスとして独立。"
+}

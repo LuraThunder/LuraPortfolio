@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import site from "../data/site.json";
+---
+
+<BaseLayout title="About" canonicalPath="/about" current="about">
+  <main class="page-main page-main--narrow">
+    <header class="page-header">
+      <h1 class="page-title">About</h1>
+    </header>
+    <figure class="about-image">
+      <img src={site.aboutImage} alt="Lura" />
+    </figure>
+    <div class="rich-text">{site.aboutBody}</div>
+    <div class="button-row">
+      <a class="button" href={site.twitterUrl} target="_blank" rel="noreferrer">X</a>
+      <a class="button" href="https://lura.booth.pm/" target="_blank" rel="noreferrer">Booth Page</a>
+    </div>
+    <section class="back-to-top">
+      <a href="#top"><span class="arrow">&uarr;</span>Back to Top</a>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,149 @@
+---
+import { readFileSync } from "node:fs";
+import path from "node:path";
+
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+}
+
+const { images } = Astro.props;
+
+function pngDimensions(buffer: Buffer) {
+  if (buffer.toString("ascii", 1, 4) !== "PNG") return undefined;
+  return {
+    width: buffer.readUInt32BE(16),
+    height: buffer.readUInt32BE(20),
+  };
+}
+
+function jpegDimensions(buffer: Buffer) {
+  let offset = 2;
+  while (offset < buffer.length) {
+    if (buffer[offset] !== 0xff) return undefined;
+    const marker = buffer[offset + 1];
+    const length = buffer.readUInt16BE(offset + 2);
+    if (marker >= 0xc0 && marker <= 0xc3) {
+      return {
+        height: buffer.readUInt16BE(offset + 5),
+        width: buffer.readUInt16BE(offset + 7),
+      };
+    }
+    offset += 2 + length;
+  }
+  return undefined;
+}
+
+function getDimensions(src: string) {
+  try {
+    const filePath = path.join(process.cwd(), "public", src.replace(/^\//, ""));
+    const buffer = readFileSync(filePath);
+    return src.toLowerCase().endsWith(".png") ? pngDimensions(buffer) : jpegDimensions(buffer);
+  } catch {
+    return undefined;
+  }
+}
+
+const galleryItems = images.map((image) => {
+  const dimensions = getDimensions(image.src);
+  const ratio = dimensions ? dimensions.width / dimensions.height : 16 / 9;
+  return {
+    ...image,
+    isSquare: ratio < 1.2,
+  };
+});
+---
+
+{images.length > 0 && (
+  <>
+    <div class="gallery" data-lightbox-gallery>
+      {galleryItems.map((image, index) => (
+        <a
+          class:list={["gallery__item", image.isSquare && "gallery__item--square"]}
+          href={image.src}
+          data-lightbox-item
+          data-lightbox-index={index}
+        >
+        <img src={image.src} alt={image.alt} loading="lazy" />
+        </a>
+      ))}
+    </div>
+    <div class="lightbox" data-lightbox aria-hidden="true">
+      <button class="lightbox__button lightbox__close" type="button" data-lightbox-close aria-label="Close"></button>
+      <button class="lightbox__button lightbox__nav lightbox__nav--prev" type="button" data-lightbox-prev aria-label="Previous image"></button>
+      <figure class="lightbox__stage">
+        <img class="lightbox__image" src="" alt="" data-lightbox-image />
+      </figure>
+      <button class="lightbox__button lightbox__nav lightbox__nav--next" type="button" data-lightbox-next aria-label="Next image"></button>
+    </div>
+    <script is:inline>
+      (() => {
+        const gallery = document.querySelector("[data-lightbox-gallery]");
+        const lightbox = document.querySelector("[data-lightbox]");
+        if (!gallery || !lightbox) return;
+
+        const image = lightbox.querySelector("[data-lightbox-image]");
+        const closeButton = lightbox.querySelector("[data-lightbox-close]");
+        const previousButton = lightbox.querySelector("[data-lightbox-prev]");
+        const nextButton = lightbox.querySelector("[data-lightbox-next]");
+        const items = [...gallery.querySelectorAll("[data-lightbox-item]")].map((link) => {
+          const img = link.querySelector("img");
+          return {
+            href: link.getAttribute("href") || "",
+            alt: img?.getAttribute("alt") || "",
+          };
+        });
+        let activeIndex = 0;
+
+        const show = (index) => {
+          activeIndex = (index + items.length) % items.length;
+          const item = items[activeIndex];
+          if (!item || !image) return;
+          image.setAttribute("src", item.href);
+          image.setAttribute("alt", item.alt);
+        };
+
+        const open = (index) => {
+          show(index);
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("has-lightbox");
+          closeButton?.focus();
+        };
+
+        const close = () => {
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          document.body.classList.remove("has-lightbox");
+          image?.removeAttribute("src");
+        };
+
+        gallery.addEventListener("click", (event) => {
+          const link = event.target.closest("[data-lightbox-item]");
+          if (!link) return;
+          event.preventDefault();
+          open(Number(link.getAttribute("data-lightbox-index") || 0));
+        });
+
+        closeButton?.addEventListener("click", close);
+        previousButton?.addEventListener("click", () => show(activeIndex - 1));
+        nextButton?.addEventListener("click", () => show(activeIndex + 1));
+
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) close();
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (!lightbox.classList.contains("is-open")) return;
+          if (event.key === "Escape") close();
+          if (event.key === "ArrowLeft") show(activeIndex - 1);
+          if (event.key === "ArrowRight") show(activeIndex + 1);
+        });
+      })();
+    </script>
+  </>
+)}
