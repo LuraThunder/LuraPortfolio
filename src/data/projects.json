@@ -1,5 +1,81 @@
 [
   {
+    "slug": "luminous-oasis",
+    "title": "Luminous Oasis",
+    "year": "2026",
+    "description": "Architectural Design / Modeling / Shader / Programming\n[Solo Project]",
+    "body": "Luminous Oasisは、Luminous Hotelの世界観を広げる屋内プールリゾートワールドです。\nプール、バーラウンジ、サウナを備えた、静かで落ち着いた空間として制作しました。\n\n水面の光、コースティクス、照明、環境音が重なり、ゆったりと過ごせる上質なリゾート空間を目指しています。\n単体のワールドとしても楽しめるほか、Luminous Hotelと接続された地下2Fのプールエリアとしても利用できます。\n\n[Unity Realtime]\nPCVR向け",
+    "links": [
+      {
+        "label": "VRChat World",
+        "url": "https://vrchat.com/home/world/wrld_4d9d7537-437d-4ac9-88ac-9042950e28aa/info"
+      },
+      {
+        "label": "BOOTH Page",
+        "url": "https://lura.booth.pm/items/8148275"
+      }
+    ],
+    "cover": "/assets/projects/luminous-oasis/cover.png",
+    "gallery": [
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-01.png",
+        "alt": "Luminous Oasis 1"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-02.png",
+        "alt": "Luminous Oasis 2"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-03.png",
+        "alt": "Luminous Oasis 3"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-04.png",
+        "alt": "Luminous Oasis 4"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-05.png",
+        "alt": "Luminous Oasis 5"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-06.png",
+        "alt": "Luminous Oasis 6"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-07.png",
+        "alt": "Luminous Oasis 7"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-08.png",
+        "alt": "Luminous Oasis 8"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-09.png",
+        "alt": "Luminous Oasis 9"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-10.png",
+        "alt": "Luminous Oasis 10"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-11.png",
+        "alt": "Luminous Oasis 11"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-12.png",
+        "alt": "Luminous Oasis 12"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-13.png",
+        "alt": "Luminous Oasis 13"
+      },
+      {
+        "src": "/assets/projects/luminous-oasis/gallery-14.png",
+        "alt": "Luminous Oasis 14"
+      }
+    ]
+  },
+  {
     "slug": "luminous-hotel",
     "title": "Luminous Hotel",
     "year": "2024",
