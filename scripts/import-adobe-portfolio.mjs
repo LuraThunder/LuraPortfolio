@@ -280,7 +280,7 @@ async function main() {
     ogImage,
     heroImage,
     aboutImage,
-    contactEmail: "quickbrown9999@gmail.com",
+    contactEmail: "lura@quickbrown.net",
     twitterUrl: "https://twitter.com/Lu_Ra_999",
     footerText: "Quickbrown\n+\nVirtual Fox Design Studio",
     aboutBody,

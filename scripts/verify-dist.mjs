@@ -74,7 +74,7 @@ for (const file of generatedTextFiles) {
 }
 
 const contactHtml = await readFile(contactHtmlPath, "utf8");
-if (!contactHtml.includes("mailto:quickbrown9999@gmail.com?subject=Portfolio%20Contact")) {
+if (!contactHtml.includes("mailto:lura@quickbrown.net?subject=Portfolio%20Contact")) {
   throw new Error("Contact mailto link was not generated correctly.");
 }
 
@@ -102,7 +102,7 @@ const baseUrl = `http://127.0.0.1:${address.port}`;
 try {
   const checks = [
     ["/work", "Virtual Comfort Creation"],
-    ["/contact", "quickbrown9999@gmail.com"],
+    ["/contact", "lura@quickbrown.net"],
     [`/${projects[0].slug}`, projects[0].title],
   ];
 
